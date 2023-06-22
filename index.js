@@ -4,6 +4,7 @@ const client = createVendiaClient({
     apiUrl: `https://51oelaenef.execute-api.us-west-2.amazonaws.com/graphql/`,
     websocketUrl: `wss://oe1ihmfuwb.execute-api.us-west-2.amazonaws.com/graphql`,
     apiKey: 'H8ET47BDuSavGmLEs36dwPZv2V8fcbUzE1pn255LyEbw' ,
+    debug: true,
   });
 
 const { entities } = client;
@@ -33,4 +34,4 @@ async function remove(entityID){
 };
 
 //add('test item 2', '3', 'whatever', false, '2023-02-14T09:23:22.000Z'); <---- example add
-//remove('0188c74d-fc66-3ccd-eeca-2339c43b8cb3'); <---- example remove
+//remove('0188c748-f034-5493-c3cf-600089870ba4');
