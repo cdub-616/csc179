@@ -33,5 +33,19 @@ async function remove(entityID){
     console.log(removeEntity);
 };
 
+async function modify(entityID, itemName, quantityAmount, location, boughtStatus, timeAdded, timePurchased) {
+    const updateEntity = await entities.shoppingList.update({
+        _id: entityID,
+        item: itemName,
+        quantity: quantityAmount,
+        recommendedLocation: location,
+        bought: boughtStatus,
+        timestampAdded: timeAdded,
+        timestampPurchased: timePurchased,
+    });
+    console.log(updateEntity);
+};
+
 //add('test item 2', '3', 'whatever', false, '2023-02-14T09:23:22.000Z'); <---- example add
 //remove('0188c748-f034-5493-c3cf-600089870ba4');
+//modify('0188e71a-3862-b59c-9ddc-5c128b3b5702', 'test item', '5', null, null, null, null);
