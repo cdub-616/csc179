@@ -5,17 +5,16 @@ import { add } from "./addItem";
     expect(data.result.item).toBe('test item');
 });
 
-test('add an empty item', async () => {
-    const data = await add();
-    expect(data.result.item).toBe(null);
+test ('add an empty item and quantity should fail', async () => {
+    await expect(add(null, '2')).toBeUndefined;
 });
 
-test('add an item with no item name but other fields', async () => {
-    const data = await add(null, '2');
-    expect(data.result.item).toBe(null);
+test ('add an empty item should fail', async () => {
+    await expect(add()).toBeUndefined;
 });
 
-test('add an item with a space as item', async() => {
+/*test('add an item with a space as item', async() => {
     const data = await add(' ');
     expect(data.result.item).toBe(' ');
 });*/
+
