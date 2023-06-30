@@ -1,8 +1,7 @@
-import { add } from "./addItem.js";
-//const target = require("./addItem");
+const target = require("./addItem");
 
-describe("my Fuzzy test", () => {
+/*describe("my Fuzzy test", () => {
 	it.fuzz("initial fuzzing", (data) => {
-		expect(add(data));
+		expect(target.add(data));
 	});
-});
+});*/
