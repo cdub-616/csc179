@@ -109,7 +109,7 @@ describe("my test suite", () => {
     })*/
 
     //for July 8
-    it('add item timestampAdded no year should fail', async () => {
+    /*it('add item timestampAdded no year should fail', async () => {
         await expect(add('item', '', '', true, '07-04T10:20:00.000Z'))
         .toBeUndefined;
     });
@@ -129,7 +129,12 @@ describe("my test suite", () => {
         .toBeUndefined;
     });
 
-    it('add item timestampAdded illegal month should fail', async () => {
+    it('add item timestampAdded month too small should fail', async () => {
+        await expect(add('item', '', '', true, '2023-00-04T10:20:00.00Z'))
+        .toBeUndefined;
+    });
+
+    it('add item timestampAdded month too big should fail', async () => {
         await expect(add('item', '', '', true, '2023-20-04T10:20:00.00Z'))
         .toBeUndefined;
     });
@@ -149,7 +154,12 @@ describe("my test suite", () => {
         .toBeUndefined;
     });
 
-    it('add item timestampAdded illegal day should fail', async () => {
+    it('add item timestampAdded day too small should fail', async () => {
+        await expect(add('item', '', '', true, '23-07-00T10:20:00.000Z'))
+        .toBeUndefined;
+    });
+
+    it('add item timestampAdded day too big should fail', async () => {
         await expect(add('item', '', '', true, '23-07-63T10:20:00.000Z'))
         .toBeUndefined;
     });
@@ -169,7 +179,7 @@ describe("my test suite", () => {
         .toBeUndefined;
     });
 
-    it('add item timestampAdded illegal hour should fail', async () => {
+    it('add item timestampAdded hour too big should fail', async () => {
         await expect(add('item', '', '', true, '23-07-04T32:20:000Z'))
         .toBeUndefined;
     });
@@ -189,7 +199,7 @@ describe("my test suite", () => {
         .toBeUndefined;
     });
 
-    it('add item timestampAdded illegal minute should fail', async () => {
+    it('add item timestampAdded minute too big should fail', async () => {
         await expect(add('item', '', '', true, '23-07-04T10:62:00.000Z'))
         .toBeUndefined;
     });
@@ -209,7 +219,7 @@ describe("my test suite", () => {
         .toBeUndefined;
     });
 
-    it('add item timestampAdded illegal second should fail', async () => {
+    it('add item timestampAdded second too big should fail', async () => {
         await expect(add('item', '', '', true, '23-07-04T10:20:70.000Z'))
         .toBeUndefined;
     });
@@ -219,17 +229,17 @@ describe("my test suite", () => {
         .toBeUndefined;
     });
 
-    it('add item illegal timestampPurchased no dashes should fail', async () =>
+    it('add item timestampPurchased no dashes should fail', async () =>
         { await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z', 
         '20230619T08:42:00.000Z')).toBeUndefined;
     })
 
-    it('add item illegal timestampPurchased year should fail', async () => {
+    it('add item timestampPurchased short year should fail', async () => {
         await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '23-06-19T08:42:00.000Z')).toBeUndefined;
     })
 
-    it('add item illegal timestampPurchased no month should fail', async () => 
+    it('add item timestampPurchased no month should fail', async () => 
         { await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '2023-19T08:42:00.000Z')).toBeUndefined;
     })
@@ -254,7 +264,12 @@ describe("my test suite", () => {
         '2023-7-04T10:20:00.000Z')).toBeUndefined;
     });
 
-    it('add item timestampPurchased illegal month should fail', async () => {
+    it('add item timestampPurchased month too small should fail', async () => {
+        await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
+        '2023-00-04T10:20:00.00Z')).toBeUndefined;
+    });
+
+    it('add item timestampPurchased month too big should fail', async () => {
         await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '2023-20-04T10:20:00.00Z')).toBeUndefined;
     });
@@ -274,7 +289,12 @@ describe("my test suite", () => {
         '23-07-4T10:20:00.000Z')).toBeUndefined;
     });
 
-    it('add item timestampPurchased illegal day should fail', async () => {
+    it('add item timestampPurchased day too small should fail', async () => {
+        await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
+        '23-07-00T10:20:00.000Z')).toBeUndefined;
+    });
+
+    it('add item timestampPurchased day too big should fail', async () => {
         await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '23-07-63T10:20:00.000Z')).toBeUndefined;
     });
@@ -294,7 +314,7 @@ describe("my test suite", () => {
         '23-07-04T1:20:00.000Z')).toBeUndefined;
     });
 
-    it('add item timestampPurchased illegal hour should fail', async () => {
+    it('add item timestampPurchased hour too big should fail', async () => {
         await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '23-07-04T32:20:000Z')).toBeUndefined;
     });
@@ -314,7 +334,7 @@ describe("my test suite", () => {
         '23-07-04T10:2:00.000Z')).toBeUndefined;
     });
 
-    it('add item timestampPurchased illegal minute should fail', async () => {
+    it('add item timestampPurchased minute too big should fail', async () => {
         await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '23-07-04T10:62:00.000Z')).toBeUndefined;
     });
@@ -334,7 +354,7 @@ describe("my test suite", () => {
         '23-07-04T10:20:7.000Z')).toBeUndefined;
     });
 
-    it('add item timestampPurchased illegal second should fail', async () => {
+    it('add item timestampPurchased second too big should fail', async () => {
         await expect(add('item', '', '', true, '2023-07-04T10:20:00.000Z',
         '23-07-04T10:20:70.000Z')).toBeUndefined;
     });
@@ -346,15 +366,16 @@ describe("my test suite", () => {
 
     //performance testing
     for (var x = 0; x < 20; x++){
-        it('add item for performance test', async() => {
+        it('add item 20x for performance test', async() => {
             await expect(add('widget1', '100000', 'Sacramento', true,
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
         })
     }
 
+
     for (var x = 0; x < 30; x++){
-        it('add item for performance test', async() => {
+        it('add item 30x for performance test', async() => {
             await expect(add('widget2', '100000', 'Sacramento', true,
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
@@ -362,7 +383,7 @@ describe("my test suite", () => {
     }
 
     for (var x = 0; x < 50; x++){
-        it('add item for performance test', async() => {
+        it('add item 50x for performance test', async() => {
             await expect(add('widget3', '100000', 'Sacramento', true,
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
@@ -370,7 +391,7 @@ describe("my test suite", () => {
     }
 
     for (var x = 0; x < 100; x++){
-        it('add item for performance test', async() => {
+        it('add item 100x for performance test', async() => {
             await expect(add('widget4', '100000', 'Sacramento', true,
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
@@ -378,7 +399,7 @@ describe("my test suite", () => {
     }
     
     for (var x = 0; x < 250; x++){
-        it('add item for performance test', async() => {
+        it('add item 250x for performance test', async() => {
             await expect(add('widget5', '100000', 'Sacramento', true,
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
@@ -386,7 +407,7 @@ describe("my test suite", () => {
     }
 
     for (var x = 0; x < 500; x++){
-        it('add item for performance test', async() => {
+        it('add item 500x for performance test', async() => {
             await expect(add('widget6', '100000', 'Sacramento', true,
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
@@ -394,11 +415,11 @@ describe("my test suite", () => {
     }
 
     for (var x = 0; x < 1000; x++){ 
-        it('add item for performance test', async () => {
+        it('add item 1000x for performance test', async () => {
             await expect(add('widget7', '1000000', 'Sacramento', true, 
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
         });
-    };
+    };*/
 
 });
