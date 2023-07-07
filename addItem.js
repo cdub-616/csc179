@@ -22,7 +22,3 @@ export async function add(itemName, quantityAmount, location, boughtStatus, time
   console.log(addEntity);
   return addEntity;
 };
-
-/*add('thingy', '2', 'nowhere', true, '2023-06-19T08:42:00.000Z');
-add('thingy2', '1', 'somewhere', false, '2023-06-19T09:56:00.000Z', 
-  '2023-06-19T09:56:00.000Z');*/

@@ -380,46 +380,5 @@ describe("my test suite", () => {
             '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
             .toBeDefined;
         })
-    }
-
-    for (var x = 0; x < 50; x++){
-        it('add item 50x for performance test', async() => {
-            await expect(add('widget3', '100000', 'Sacramento', true,
-            '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
-            .toBeDefined;
-        })
-    }
-
-    for (var x = 0; x < 100; x++){
-        it('add item 100x for performance test', async() => {
-            await expect(add('widget4', '100000', 'Sacramento', true,
-            '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
-            .toBeDefined;
-        })
-    }
-    
-    for (var x = 0; x < 250; x++){
-        it('add item 250x for performance test', async() => {
-            await expect(add('widget5', '100000', 'Sacramento', true,
-            '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
-            .toBeDefined;
-        })
-    }
-
-    for (var x = 0; x < 500; x++){
-        it('add item 500x for performance test', async() => {
-            await expect(add('widget6', '100000', 'Sacramento', true,
-            '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
-            .toBeDefined;
-        })
-    }
-
-    for (var x = 0; x < 1000; x++){ 
-        it('add item 1000x for performance test', async () => {
-            await expect(add('widget7', '1000000', 'Sacramento', true, 
-            '2023-07-04T10:14:00.000Z', '2023-07-04T10:14:00.000Z'))
-            .toBeDefined;
-        });
-    };*/
-
+    }*/
 });
